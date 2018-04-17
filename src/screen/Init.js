@@ -20,6 +20,7 @@ export class Init extends Component {
                 <Input
                     placeholder="Email"
                     onChangeText={text=>this.setState({ txtEmail: text })}
+                    style={{ backgroundColor: 'yellow' }}
                 />
 
                 <Input 
@@ -27,7 +28,12 @@ export class Init extends Component {
                     onChangeText={text=>this.setState({ txtPassword: text })}
                     secureTextEntry
                 />
-                <Text>{this.state.txtEmail}-{this.state.txtPassword}</Text>
+                <Button 
+                    title="Login"
+                    type="success"
+                    style={{ width: 200 }}
+                    onPress={()=>alert('123')}
+                />
             </View>
         )
     }

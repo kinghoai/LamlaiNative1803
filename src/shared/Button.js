@@ -14,9 +14,12 @@ export class Button extends Component {
         const { title, onPress } = this.props;
         addStyleSheet = this.getAddStyleSheet();
         return (
-            <TouchableOpacity style={[styles.buttonContainer, addStyleSheet]} onPress={onPress}>
-                    <Text style={styles.buttonText}>{title}</Text>
-                </TouchableOpacity>            
+            <TouchableOpacity
+                {...this.props}
+                style={[styles.buttonContainer, addStyleSheet, this.props.style]} 
+            >
+                <Text style={styles.buttonText}>{title}</Text>
+            </TouchableOpacity>            
         )
     }
 };
@@ -29,6 +32,7 @@ const styles = StyleSheet.create ({
         borderColor: 'gray',
         borderWidth: 1,
         margin: 5,
+        alignItems: 'center'
     },
     buttonText:{
         color: '#FFF',
